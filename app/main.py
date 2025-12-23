@@ -19,6 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Настройка статических файлов и шаблонов
 static = os.path.join(BASE_DIR, 'static')
 templates = os.path.join(BASE_DIR, 'templates')
+temp_dir = Jinja2Templates(directory=templates)
+app.mount("/static", StaticFiles(directory=static), name="static")
 
 # Для демонстрации используем фиксированного пользователя
 CURRENT_USER_ID = 1
