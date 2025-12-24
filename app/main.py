@@ -29,7 +29,7 @@ CURRENT_USER_ID = 1
 # Главная страница
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return temp_dir.TemplateResponse("index.html", {"request": request})
 
 
 # Инициализация тестовых данных
